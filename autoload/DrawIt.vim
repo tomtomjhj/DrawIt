@@ -12,8 +12,8 @@
 "              Should put DrawItPlugin.vim in your .vim/plugin directory,
 "                     put DrawIt.vim       in your .vim/autoload directory
 "                     put DrawIt.txt       in your .vim/doc directory.
-"             Then, use \di to start DrawIt,
-"                       \ds to stop  Drawit, and
+"             Then, use :DrawIt to start DrawIt,
+"                       :DrawIt! to stop  Drawit, and
 "                       draw by simply moving about using the cursor keys.
 "
 "             You may also use visual-block mode to select endpoints and
@@ -97,7 +97,7 @@ fun! DrawIt#DrawItStart(...)
   " DrawItStart: report on [DrawIt] mode {{{3
   if exists("b:dodrawit") && b:dodrawit == 1
    " already in DrawIt mode
-    echo "[DrawIt] (already on, use ".((exists("mapleader") && mapleader != "")? mapleader : '\')."ds to stop)"
+    echo "[DrawIt] (already on, use :Drawit! to stop)"
 "   call Dret("DrawItStart")
    return
   endif
@@ -430,7 +430,7 @@ fun! DrawIt#DrawItStart(...)
 
  " DrawItStart: Menu support {{{3
  if has("gui_running") && has("menu") && &go =~# 'm'
-  exe 'menu '.g:DrChipTopLvlMenu.'DrawIt.Stop\ \ DrawIt<tab>\\ds				<Leader>ds'
+  exe 'menu '.g:DrChipTopLvlMenu.'DrawIt.Stop\ \ DrawIt				:DrawIt!<CR>'
   exe 'menu '.g:DrChipTopLvlMenu.'DrawIt.Append\ Blanks<tab>\\s					<Leader>s'
   exe 'menu '.g:DrChipTopLvlMenu.'DrawIt.Draw\ Arrow<tab>\\a					<Leader>a'
   exe 'menu '.g:DrChipTopLvlMenu.'DrawIt.Draw\ Box<tab>\\b						<Leader>b'
@@ -503,7 +503,7 @@ fun! DrawIt#DrawItStop()
 
  " DrawItStop: DrChip menu support: {{{3
  if has("gui_running") && has("menu") && &go =~# 'm'
-  exe 'menu   '.g:DrChipTopLvlMenu.'DrawIt.Start\ DrawIt<tab>\\di		<Leader>di'
+  exe 'menu   '.g:DrChipTopLvlMenu.'DrawIt.Start\ DrawIt		:DrawIt<CR>'
   exe 'unmenu '.g:DrChipTopLvlMenu.'DrawIt.Stop\ \ DrawIt'
   exe 'unmenu '.g:DrChipTopLvlMenu.'DrawIt.Toggle\ Erase\ Mode'
   exe 'unmenu '.g:DrChipTopLvlMenu.'DrawIt.Draw\ Arrow'

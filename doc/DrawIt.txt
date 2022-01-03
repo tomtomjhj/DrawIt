@@ -42,8 +42,6 @@ Copyright:    Copyright (C) 2018 Charles E. Campbell
  || Starting &   |                                                           ||
  || Stopping     | Explanation                      Links:                   ||
  ++--------------+-----------------------------------------------------------++
- ||  \di         | start DrawIt                     |drawit-start|             ||
- ||  \ds         | stop  DrawIt                     |drawit-stop|              ||
  ||  :DIstart    | start DrawIt                     |drawit-start|             ||
  ||  :DIstart S  | start DrawIt in single-bar mode  |drawit-start|             ||
  ||  :DIstart D  | start DrawIt in double-bar mode  |drawit-start|             ||
@@ -158,7 +156,6 @@ DrawIt be loaded.  Thus DrawIt supports fast vim startup.
 
 STARTING						*drawit-start* {{{2
 
-\di           (starts in normal     drawing mode)       *drawit-\di*
 :DrawIt       (starts in normal     drawing mode)       *drawit-DrawIt*
 :DIstart      (starts in normal     drawing mode)       *drawit-DIstart*
 :DIstart S    (starts in single-bar drawing mode)
@@ -170,7 +167,7 @@ STARTING						*drawit-start* {{{2
 DrawIt supports a number of different ways to start up as shown above; in
 addition, you may use gvim and the DrChip menu.
 
-To stop DrawIt, use \ds (*d*rawit *s*top) or :DIstop.
+To stop DrawIt, use :DrawIt!.
 
 DrawIt also supports the use of |mapleader|; with that, you may specify
 what you with as the maps' leading kickoff character.  This document
@@ -186,12 +183,11 @@ A message, "[DrawIt]", will appear on the message line.
 
                                                         *drawit-off*
 STOPPING						*drawit-stop* {{{2
-\ds
 :DrawIt!
 :DIstop
 :DIoff
 
-When you are done with DrawIt, use \ds to stop DrawIt mode.  Stopping DrawIt
+Use one of the above commands to stop DrawIt mode.  Stopping DrawIt
 will restore your usual options and remove the maps DrawIt set up.
 
 A message, "[DrawIt off]", will appear on the message line.

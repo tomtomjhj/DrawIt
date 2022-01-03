@@ -2,10 +2,7 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=40
 
 DrawIt is a plugin which allows one to draw lines left, right, up, down, and along both slants. Optionally one may "cap" the lines with arrowheads.  One may change the horizontal, vertical, slant, and crossing characters to whichever characters one wishes.
 
-Its easy to start and stop DrawIt: use
-
-   \di to start DrawIt and
-   \ds to stop  DrawIt.
+Its easy to start and stop DrawIt: use :DrawIt[!].
 
 The alpha/beta version is available at  http://www.drchip.org/astronaut/vim/index.html#DRAWIT.
 

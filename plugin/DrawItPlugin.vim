@@ -1,5 +1,5 @@
 " DrawItPlugin.vim: a simple way to draw things in Vim -- just put this file in
-"             your plugin directory, use \di to start (\ds to stop), and
+"             your plugin directory, use :DrawIt to start (:DrawIt! to stop), and
 "             just move about using the cursor keys.
 "
 "             You may also use visual-block mode to select endpoints and
@@ -46,19 +46,6 @@ com! -nargs=0       DIstop   	call DrawIt#DrawItStop()
 sil! com -nargs=0 DInrml call DrawIt#SetMode('N')
 sil! com -nargs=0 DIsngl call DrawIt#SetMode('S')
 sil! com -nargs=0 DIdbl  call DrawIt#SetMode('D')
-
-" maps: users may override these maps by defining their own mappings in their .vimrc
-"       to <Plug>DrawItStart and/or <Plug>DrawItStop.  By default:
-"         \di : start DrawIt
-"         \ds : stop  DrawIt
-if !hasmapto('<Plug>DrawItStart')
-  map <unique> <Leader>di <Plug>DrawItStart
-endif
-noremap <silent>        <Plug>DrawItStart  :call DrawIt#DrawItStart()<cr>
-if !hasmapto('<Plug>DrawItStop')
-  map <unique> <Leader>ds <Plug>DrawItStop
-endif
-noremap <silent> <Plug>DrawItStop :call DrawIt#DrawItStop()<cr>
 
 " ---------------------------------------------------------------------
 " DrChip Menu Support: {{{1
